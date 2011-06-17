@@ -1,0 +1,69 @@
+# rwAddLinks v1.0.0 #
+##### Created by Adam Merrifield, 06-17-11 07:54 #####
+
+## About rwAddLinks ##
+
+There are a lot of people on the seyDesign forum who want to link things that just aren't linkable in the usual manner. I've had to hand out a version of this code countless times, tailor made for everyone who asks. So I figured it would just be easier if I made a quick and dirty jQuery plugin out of it.
+
+## Contents ##
+
+* rwaddlinks.jquery.js - rwAddLinks script
+* rwaddlinks.jquery.min.js - minified rwAddLinks script
+* demo.html - shows rwAddLinks in action
+
+### Usage ###
+
+- include jQuery in the `<head/>`
+- include this plugin code in the `<head/>`
+- include an array of URL's with as many items as
+	there are elements to link
+- select a group of elements to link i.e. `$('.someClass, #anID, p, div')`
+- invoke with the array as an argument i.e. `.rwAddLinks(linkArray)`
+- example:   
+	`$('.someClass').rwAddLinks(linkArray);`
+
+### Example ###
+	
+	<script src="jquery.min.js" charset="utf-8"></script>
+
+	<script src="rwaddlinks.jquery.min.js" charset="utf-8"></script>
+
+	<head>
+		<script charset="utf-8">
+		$(document).ready(function() {
+			var someLinks = [
+				"http://www.google.com",
+				"http://www.twitter.com",
+				"http://www.facebook.com"
+			];
+			$('.someElements').rwAddLinks(someLinks);
+		});
+		</script>
+	</head>
+	<body>
+	
+		<header class="someElements">
+			<h2>Going to Google</h2>
+			<p>This whole header gets linked to Google.</p>
+		</header>
+
+		<h2>Good ol' Markup</h2>
+		<p>A regular paragraph of boring stuff</p>
+		
+		<section class="someElements">
+			<h2>Going to Twitter</h2>
+			<p>This whole section gets linked to Twitter.</p>
+		</section>
+		
+		<div class="someElements">
+			<h2>Going to Facebook</h2>
+			<p>This whole div gets linked to Facebook.</p>
+		</div>
+
+	</body>
+
+
+
+### Putting it all together ###
+
+See the demo.html file.
